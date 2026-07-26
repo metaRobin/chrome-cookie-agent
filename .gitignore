@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+__MACOSX/
+
+# 私钥 / 密钥
+*.pem
+
+# 日志
+*.log
+chrome-cookie-host.log
+
+# 构建产物
+dist/
+node_modules/
+
+# 废弃的原生消息产物（若本地误生成）
+native-host/com.agent.chrome.cookies.json
+native-host/run-host

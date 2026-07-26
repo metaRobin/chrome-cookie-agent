@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie Agent Bridge",
+  "version": "1.0.0",
+  "description": "Read your own Chrome cookies and serve them to a local AI agent over a loopback HTTP bridge. All processing stays on your machine; nothing is sent to any remote server.",
+  "minimum_chrome_version": "109",
+  "permissions": [
+    "cookies",
+    "offscreen",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' http://127.0.0.1:9898 http://localhost:9898;"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cookie Agent Bridge",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}
